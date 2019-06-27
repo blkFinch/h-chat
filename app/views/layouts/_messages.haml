@@ -1,0 +1,5 @@
+- flash.each do |type, msg|
+  .ui.message{ class: [("success" if type == 'success'),("negative" if type == 'danger')]}
+    %i.close.icon
+    .header
+      = msg

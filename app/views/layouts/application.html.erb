@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>HChat</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,9 @@
 
   <body>
     <%= render 'layouts/menu' %>
-    <%= yield %>
+    <div class="ui container">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

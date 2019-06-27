@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+if User.count < 3
+  10.times do
+    User.create(
+      username: Faker::Games::Fallout.character,
+      password: 'password'
+    )
+  end
+end
+
+User.all.each do |u|
+  2.times do
+    u.messages.create(body: Faker::Quote.famous_last_words)
+  end
+end

@@ -1,2 +1,29 @@
-%h1.ui.header Pages#home
-%p Find me in app/views/pages/home.html.haml
+.ui.equal.width.grid
+  -# .row
+  -#   .two.wide.column
+  -#     %h1.ui.icon.header
+  -#       %i.blue.quinscape.icon
+  .row
+    .column
+      .ui.equal.width.grid
+        .row
+          .ten.wide.column
+            .ui.fluid.blue.card.chatbox
+              .content
+                .ui.small.feed
+                  %h4.ui.header Followers Activity
+                  - @messages.each do |msg|
+                    =render 'shared/message', obj: msg
+
+              .extra-content
+                = render 'message_form'
+
+          .column
+            .ui.vertical.text.menu
+              .header.item Friends
+              %a.active.item
+                Closest
+              %a.item
+                Most Comments
+              %a.item
+                Most Popular

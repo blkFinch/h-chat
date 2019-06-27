@@ -1,2 +1,16 @@
-%h1 Sessions#login
-%p Find me in app/views/sessions/login.html.haml
+.ui.blue.segment.very.padded
+  .ui.two.column.very.relaxed.grid
+    .column
+      %h2.ui.header Login
+      =form_for(:session, html: {class: 'ui form'}, url: login_path) do |f|
+        .field
+          = f.label :username
+          = f.text_field :username
+        .field
+          = f.label :password
+          = f.password_field :password
+        = f.submit 'Login', class: 'button ui button'
+    .column
+      %button.ui.primary.button sign up
+  .ui.vertical.divider
+    OR

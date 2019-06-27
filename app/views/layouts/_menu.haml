@@ -1,6 +1,5 @@
 .ui.secondary.pointing.menu
-  %a.active.item
-    Home
+  = link_to 'Chat', root_path, class: 'item'
   %a.item
     Messages
   %a.item
@@ -14,5 +13,10 @@
 
 
   .right.menu
+    - if !logged_in?
+      =link_to 'Login', login_path, class: 'ui item'
+    - else
+      = link_to 'Log out', logout_path, class: 'ui item'
+
     %a.ui.item
-      Logout
+      %button.ui.primary.button Sign Up

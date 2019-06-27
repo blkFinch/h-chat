@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'haml-rails', '~> 2.0'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+#formats output in rails c
+gem 'hirb'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -44,6 +46,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "rspec-rails", "~> 3.5"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
