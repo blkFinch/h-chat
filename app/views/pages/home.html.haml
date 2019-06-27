@@ -9,8 +9,8 @@
         .row
           .ten.wide.column
             .ui.fluid.blue.card.chatbox
-              .content
-                .ui.small.feed
+              .content#messages
+                .ui.small.feed#msg-container
                   %h4.ui.header Followers Activity
                   - @messages.each do |msg|
                     =render 'shared/message', obj: msg
@@ -27,3 +27,4 @@
                 Most Comments
               %a.item
                 Most Popular
+

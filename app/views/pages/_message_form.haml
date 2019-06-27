@@ -1,4 +1,6 @@
-= form_for(@message, class: 'ui reply form', url: message_path ) do |f|
-  .ui.fluid.icon.input
+= form_for(@message, class: 'ui reply form', url: message_path, remote: true) do |f|
+  .ui.fluid.icon.input#msg_input
     = f.text_field :body
-    = f.button '<i class="inverted edit icon"></i>'.html_safe, class: 'ui teal button'
+    = f.button '<i class="inverted edit icon"></i>'.html_safe, class: 'ui teal button', id: 'send-btn'
+
+
